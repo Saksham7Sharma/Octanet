@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>MovieBook</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Movies</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="cta">
+                <a href="#" class="btn">Book Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Your Ultimate Movie Experience</h2>
+            <p>Book your tickets now and enjoy the latest blockbusters!</p>
+            <a href="#" class="btn">Browse Movies</a>
+        </div>
+    </section>
+
+    <!-- Movie Listings -->
+    <section class="movies">
+        <div class="container">
+            <h2>Now Showing</h2>
+            <div class="movie-grid">
+                <!-- Movie 1 -->
+                <div class="movie-item">
+                    <img src="movie1.jpg" alt="Movie 1">
+                    <h3>Movie Title 1</h3>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+                <!-- Movie 2 -->
+                <div class="movie-item">
+                    <img src="movie2.jpg" alt="Movie 2">
+                    <h3>Movie Title 2</h3>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+                <!-- Movie 3 -->
+                <div class="movie-item">
+                    <img src="movie3.jpg" alt="Movie 3">
+                    <h3>Movie Title 3</h3>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+                <!-- Movie 4 -->
+                <div class="movie-item">
+                    <img src="movie4.jpg" alt="Movie 4">
+                    <h3>Movie Title 4</h3>
+                    <a href="#" class="btn">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Book with Us?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>Easy Booking</h3>
+                    <p>Quick and simple booking process.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Multiple Payment Options</h3>
+                    <p>Pay with credit cards, PayPal, and more.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>24/7 Support</h3>
+                    <p>We're here to help, anytime you need us.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Exclusive Offers</h3>
+                    <p>Get access to special deals and discounts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MovieBook. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header .logo {
+    float: left;
+}
+
+header nav {
+    float: right;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header .cta {
+    clear: both;
+    text-align: right;
+}
+
+header .btn {
+    background: #e50914;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.hero {
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h2 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+.hero .btn {
+    background: #e50914;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.movies {
+    background: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.movies h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.movie-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.movie-item {
+    width: 22%;
+    background: #f4f4f4;
+    margin-bottom: 20px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.movie-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.movie-item h3 {
+    margin: 15px 0;
+    font-size: 1.5em;
+}
+
+.movie-item .btn {
+    background: #e50914;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.features {
+    background: #333;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.features h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    width: 22%;
+    background: #444;
+    margin-bottom: 20px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.feature-item h3 {
+    margin: 15px 0;
+    font-size: 1.5em;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
