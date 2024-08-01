@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="todo-container">
+        <h1>To-Do List</h1>
+        <form id="todo-form">
+            <input type="text" id="todo-input" placeholder="Add a new task..." required>
+            <button type="submit">Add Task</button>
+        </form>
+        <ul id="todo-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.todo-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 25%;
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #218838;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+li {
+    background: #f4f4f4;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: #777;
+}
+
+li input[type="text"] {
+    border: none;
+    background: none;
+    width: 100%;
+}
+
+li .actions {
+    display: flex;
+    gap: 10px;
+}
+
+li .actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #007bff;
+}
+
+li .actions button:hover {
+    color: #0056b3;
+}
+
+li .actions .delete-btn {
+    color: #dc3545;
+}
+
+li .actions .delete-btn:hover {
+    color: #c82333;
+}
+
+
+
+
+
+#js
+document.addEventListener('DOMContentLoaded', function() {
+    const todoForm = document.getElementById('todo-form');
+    const todoInput = document.getElementById('todo-input');
+    const todoList = document.getElementById('todo-list');
+
+    // Add new task
+    todoForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const taskText = todoInput.value.trim();
+        if (taskText !== '') {
+            addTask(taskText);
+            todoInput.value = '';
+        }
+    });
+
+    // Add task function
+    function addTask(taskText) {
+        const li = document.createElement('li');
+
+        const taskInput = document.createElement('input');
+        taskInput.type = 'text';
+        taskInput.value = taskText;
+        taskInput.setAttribute('readonly', 'readonly');
+
+        const actions = document.createElement('div');
+        actions.classList.add('actions');
+
+        const editBtn = document.createElement('button');
+        editBtn.innerHTML = 'Edit';
+        editBtn.classList.add('edit-btn');
+
+        const completeBtn = document.createElement('button');
+        completeBtn.innerHTML = 'Complete';
+        completeBtn.classList.add('complete-btn');
+
+        const deleteBtn = document.createElement('button');
+        deleteBtn.innerHTML = 'Delete';
+        deleteBtn.classList.add('delete-btn');
+
+        actions.appendChild(editBtn);
+        actions.appendChild(completeBtn);
+        actions.appendChild(deleteBtn);
+
+        li.appendChild(taskInput);
+        li.appendChild(actions);
+        todoList.appendChild(li);
+
+        // Edit task
+        editBtn.addEventListener('click', function() {
+            if (editBtn.innerText.toLowerCase() === "edit") {
+                taskInput.removeAttribute('readonly');
+                taskInput.focus();
+                editBtn.innerText = "Save";
+            } else {
+                taskInput.setAttribute('readonly', 'readonly');
+                editBtn.innerText = "Edit";
+            }
+        });
+
+        // Mark as completed
+        completeBtn.addEventListener('click', function() {
+            li.classList.toggle('completed');
+        });
+
+        // Delete task
+        deleteBtn.addEventListener('click', function() {
+            todoList.removeChild(li);
+        });
+    }
+});
